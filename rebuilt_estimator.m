@@ -218,6 +218,7 @@ for k = 1:frames
          disp(['x-shift: ' num2str(xshift)])
          disp(['y-shift: ' num2str(yshift)])
         pattern2 = gather(pattern2);
+        
     else
         pattern2 = pattern_stack(:,:,k-1);
         err = [0 0];
@@ -235,6 +236,8 @@ for k = 1:frames
         disp(['y-shift: ' num2str(yshift)])
     end
     pattern_stack(:,:,k) = circshift(pattern2,[xshift yshift]);
+    % Is there a faster way to implement optimise skew?
+%    [pattern_stack(:,:,k), skew] = optimiseskew(pattern_stack(:,:,k), maxima_array(:,:,k));
 end
 disp(['Done frame: ' num2str(frames) '/' num2str(frames)]) 
 end
