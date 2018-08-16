@@ -112,7 +112,7 @@ clear D2 P2
 %  un-comment this code if you wish to use the estimator function
 %  D1 = m.D1;
 %  D1 = double(D1);
-%  P = rebuilt_estimator(D1,PSF_ex1,S,S,threshold);
+%  P = newEstimator(D1,PSF_ex1,S,S,threshold);
 %  D1 = single(D1);
 %  m.D1 = D1;
 %  clear D1
@@ -189,6 +189,8 @@ D2 = m.D2;
  
  %% Upsample
 %---------------------------------------------------------------------
+% This upsample section is not needed given sufficient resolution 
+% of the PSF image file
 disp 'Resizing...'
 PSF_ex1 = interp2(PSF_ex1);
 Sample=interp2(Sample);
