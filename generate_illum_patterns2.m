@@ -27,9 +27,9 @@ shifts = floor(N/S);
 for ii = 1:S:N+2*PSF_sizex
     for i = 1:S:N+2*PSF_sizex
 
-        top = ii;
+        top = round(ii);
         bottom = top+PSF_sizey-1;
-        left = i;
+        left = round(i);
         right = left+PSF_sizex-1;
 
         pImageData(top:bottom,left:right) = pImageData(top:bottom,left:right) + PSF;
