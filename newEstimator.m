@@ -86,7 +86,7 @@ av_y = ceil(mean(av(2,3:P-3))); % This excludes outliers and averages spacings
 
 disp (['x spacing = ' num2str(av_x)])
 disp (['y spacing = ' num2str(av_y)])
-pattern = cropped_illum_patterns(N, PSF, av_x, av_y,co_ords(:,:,1));
+pattern = generate_illum_patterns(N, PSF, av_x, av_y);
 
 %% Estimate angle
 %---------------------------------------------------------------------
