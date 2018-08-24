@@ -16,9 +16,9 @@ pImageData = zeros(N+3*PSF_sizex,N+3*PSF_sizey);
 % iterate over all of the spots
 for i = 1:xshift:N+2*PSF_sizex
     for ii = 1:yshift:N+2*PSF_sizey
-    top = ii;
+    top = round(ii);
     bottom = top+PSF_sizey-1;
-    left = i;
+    left = round(i);
     right = left+PSF_sizex-1;
         if size(pImageData(top:bottom,left:right)) == size(PSF)
         pImageData(top:bottom,left:right) = pImageData(top:bottom,left:right) + PSF;
